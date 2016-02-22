@@ -10,8 +10,10 @@ Note: Currently this application will only work on Macs.  If there is a need for
 
 ##Installing Dependencies
 The easiest way to get up and running is to simply run the configure script from the command line:<br>
-```./configure.sh
-```<br>
+```
+./configure.sh
+```
+<br>
 This will automatically install all dependencies. If you would prefer to do a manual install, the following dependencies are needed:<br>
 <li>Node JS
 <li>NPM
@@ -21,8 +23,10 @@ This will automatically install all dependencies. If you would prefer to do a ma
 
 ##Running the Image Brander
 Place all images you would like to brand into the srcImages folder.  Name your branding image filter.png in the top directory.  In the command line run:<br>
-```node brander.js
-```<br>
+```
+node brander.js
+```
+<br>
 
 Branded images will be created in the outputImages folder.
 
