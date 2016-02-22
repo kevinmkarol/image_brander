@@ -1,6 +1,6 @@
 #Image Brander
 
-![](brand.png)
+![](filter.png)
 
 Lately there has been a lot of buzz around branded Facebook profile pictures and why certain events receive a filter to show support or solidarity (e.g. The Paris Terrorist Attacks) while others do not (e.ge the Beirut bombing).  This simple open source Node application is an attempt to democratize the process, and allow anyone to create a branded proflie picture by batch overlaying a filter onto a folder of images.<br>
 
