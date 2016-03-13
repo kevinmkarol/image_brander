@@ -1,3 +1,4 @@
+var os = require('os');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -9,18 +10,24 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+
+var networkInterfaces = os.networkInterfaces();
+var wirelessIPAddress = networkInterfaces['en1'][1]['address']
+
 /**
 **********************************
 **********************************
 *Set Variables for uploader app
 *paths should be relative to this folder
 **/
-var websiteAddress = "http://127.0.0.1";
 var portNumber = 3000;
+var websiteAddress = "http://" + wirelessIPAddress;
 var brandOverlay = "../filter.png"
 /**********************************
 **********************************
 **********************************/
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

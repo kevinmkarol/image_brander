@@ -84,7 +84,6 @@ var shouldBatchProcess = false;
 process.argv.forEach(function(val, index, array){
   if(val.indexOf("-b") == 0){
     shouldBatchProcess = true;
-    height = 800;
   }else if(val.indexOf("-h=") == 0){
     height = parseInt(val.substring(3));
   }else if(val.indexOf("-w=") == 0){

@@ -23,7 +23,7 @@ router.post('/api/photo', function(req,res){
   upload(req,res,function(err){
     if(err){
     	console.log(err)
-    	return res.end("Error uploading file.");
+    	return res.end("Error uploading file.  Make sure your file has the extension .png or .jpg");
     }
     console.log(filename)
 
@@ -34,7 +34,7 @@ router.post('/api/photo', function(req,res){
     setTimeout(function(){
       var fullAddress = appVars.websiteAddress + ":" + appVars.portNumber + "/uploads/" + overlayFilename;
       res.render('index.jade', {url:fullAddress})
-    }, 250)
+    }, 1000)
 
   });
 });
@@ -64,8 +64,9 @@ var storage = multer.diskStorage({
 
 var upload = multer({storage : storage,
     fileFilter : function(req, file, callback) {
-        var fileType = ['png', 'jpg'];
-        if (fileType.indexOf(file.originalname.split('.')[file.originalname.split('.').length-1]) === -1) {
+        var fileType = ['png', 'jpg', '.jpeg'];
+        var fileExtension = file.originalname.split('.')[file.originalname.split('.').length-1].toLowerCase();
+        if (fileType.indexOf(fileExtension) === -1) {
             return callback(new Error('Wrong extension type'));
         }
         callback(null, true);
